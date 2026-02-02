@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import {
   Car,
   Wrench,
@@ -79,13 +78,11 @@ function StepCard({
     <main className="bg-black text-white overflow-x-hidden">
 
       {/* ================= HERO ================= */}
-      <section id="home" className="relative min-h-[90vh] flex items-center">
-        <Image
+     <section id="home"className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <img
           src="/images/hero.png"
           alt="Mobile Auto Repair"
-          fill
-          priority
-          className="object-cover"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-transparent" />
 
@@ -166,10 +163,9 @@ function StepCard({
       viewport={{ once: false }}
       className="relative w-[520px] h-[520px] mx-auto"
     >
-      <Image
+      <img
         src="/images/about-1.png"
         alt="Mechanic at work"
-        fill
         className="object-contain"
       />
     </motion.div>
@@ -189,10 +185,9 @@ function StepCard({
       viewport={{ once: false }}
       className="relative w-[520px] h-[520px] mx-auto"
     >
-      <Image
+      <img
         src="/images/owner.png"
         alt="Logan Bedenbender"
-        fill
         className="object-contain"
       />
     </motion.div>
@@ -342,10 +337,9 @@ function StepCard({
       </p>
 
       <div className="relative w-full max-w-lg h-[320px]">
-        <Image
+        <img
           src="/images/view-3d-car.png"
           alt="Car"
-          fill
           className="object-contain drop-shadow-2xl"
         />
       </div>
@@ -460,10 +454,9 @@ function StepCard({
 
   {/* BACKGROUND IMAGE */}
   <div className="absolute inset-0 -z-20">
-    <Image
+    <img
       src="/images/how-to-order-bg.png"
       alt="How To Order"
-      fill
       className="object-cover"
     />
   </div>

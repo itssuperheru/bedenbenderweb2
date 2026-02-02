@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -20,7 +19,7 @@ export default function Footer() {
           <div>
             {/* LOGO */}
             <div className="mb-4">
-              <Image
+              <img
                 src="/images/logo.png" // ⬅️ pastikan file ini ada
                 alt="Bedenbender Mobile Automotive LLC"
                 width={260}

@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 
@@ -9,16 +10,15 @@ export default function Navbar() {
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
 
       <nav className="relative max-w-7xl mx-auto px-6 h-20 flex items-center justify-between text-white">
-        
+
         {/* LOGO */}
         <Link href="/" className="flex items-center">
-          <Image
-            src="/images/logo-navbar.png" 
+          <img
+            src="/images/logo-navbar.png"
             alt="Bedenbender Mobile Automotive LLC"
-            width={230}
-            height={50}
+            width="230"
+            height="50"
             className="object-contain"
-            priority
           />
         </Link>
 
@@ -48,14 +48,14 @@ export default function Navbar() {
 
         {/* CTA BUTTON */}
         <a
-  href="https://wa.me/15632991817?text=Hi%20Bedenbender%20Mobile%20Automotive%20LLC,%20I%20want%20to%20book%20the%20service!"
-  target="_blank"
-  className="hidden md:flex items-center gap-2 bg-sky-500 hover:bg-sky-400 transition text-white px-6 py-3 rounded-full font-semibold"
->
-  <MessageCircle size={18} />
-  Book our service
-</a>
-
+          href="https://wa.me/15632991817?text=Hi%20Bedenbender%20Mobile%20Automotive%20LLC,%20I%20want%20to%20book%20the%20service!"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-2 bg-sky-500 hover:bg-sky-400 transition text-white px-6 py-3 rounded-full font-semibold"
+        >
+          <MessageCircle size={18} />
+          Book our service
+        </a>
       </nav>
     </header>
   );
