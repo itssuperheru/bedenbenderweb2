@@ -125,22 +125,30 @@ function StepCard({
       </section>
 
      {/* ================= WHO ARE WE ================= */}
-<section id="about" className="py-32 overflow-hidden">
-  <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+<section id="about" className="py-20 lg:py-32">
+  <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
     {/* LEFT TEXT – ANIMATE FROM LEFT */}
-    <motion.div
-      initial={{ opacity: 0, x: -80 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: false }}
-      className="bg-zinc-900/80 p-10 rounded-3xl border border-white/10"
-    >
+   <motion.div
+  initial={{ opacity: 0, x: -80 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: false }}
+  className="
+  relative
+  bg-gradient-to-br from-zinc-800/90 to-zinc-900/95
+  p-10
+  rounded-3xl
+  border border-sky-500/30
+  shadow-[0_0_40px_rgba(14,165,233,0.15)]
+"
+>
       <h2 className="text-4xl font-bold text-sky-400 mb-6">
         Who Are We?
       </h2>
+      
+<p className="text-zinc-300 leading-relaxed">
 
-      <p className="text-zinc-300">
         At <strong>Bedenbender Mobile Automotive</strong>, we’re committed
         to delivering top-quality mobile auto repair you can trust.
       </p>
@@ -157,16 +165,15 @@ function StepCard({
 
     {/* RIGHT IMAGE – ANIMATE FROM RIGHT */}
     <motion.div
-      initial={{ opacity: 0, x: 80 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-      viewport={{ once: false }}
-      className="relative w-[520px] h-[520px] mx-auto"
-    >
+  initial={{ opacity: 0, x: 80 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+  viewport={{ once: false }}
+>
       <img
-        src="/images/about-1.png"
-        alt="Mechanic at work"
-        className="object-contain"
+      src="/images/about-1.png"
+      alt="Mechanic at work"
+      className="w-full h-auto object-contain rounded-2xl"
       />
     </motion.div>
 
@@ -183,12 +190,12 @@ function StepCard({
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
       viewport={{ once: false }}
-      className="relative w-[520px] h-[520px] mx-auto"
+      className="relative w-full max-w-sm mx-auto mt-8 lg:mt-0"
     >
       <img
         src="/images/owner.png"
         alt="Logan Bedenbender"
-        className="object-contain"
+        className="w-full h-auto object-contain rounded-2xl"
       />
     </motion.div>
 
@@ -233,14 +240,14 @@ function StepCard({
   className="relative py-32 overflow-hidden"
 >
   {/* BACKGROUND */}
-  <div className="absolute inset-0">
-    <img
-      src="/images/service-bg.png"
-      alt="Services background"
-      className="w-full h-full object-cover scale-110 blur-md"
-    />
-    <div className="absolute inset-0 bg-black/75" />
-  </div>
+  <div className="absolute inset-0 z-0">
+  <img
+    src="/images/service-bg.png"
+    alt="Services background"
+    className="w-full h-full object-cover object-center blur-md opacity-40"
+  />
+ <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80" />
+</div>
 
   {/* CONTENT */}
   <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -302,8 +309,6 @@ function StepCard({
         items={[
           "Spark Plugs",
           "Coil Packs",
-          "Serpentine Belts",
-          "Alternators",
         ]}
       />
 
@@ -545,9 +550,9 @@ function StepCard({
         viewport={{ once: false }}
         className="relative flex justify-center"
       >
-        <div className="absolute w-[420px] h-[420px] rounded-full border-2 border-dashed border-white/20" />
+      <div className="absolute hidden md:block w-[420px] h-[420px] rounded-full border-2 border-dashed border-white/20" />
 
-        <div className="relative w-[520px] rounded-2xl overflow-hidden shadow-2xl z-10">
+        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md rounded-2xl overflow-hidden shadow-2xl z-10">
           <img
             src="/images/contact.png"
             alt="Mechanic at work"
@@ -569,7 +574,7 @@ function StepCard({
             },
           },
         }}
-        className="flex flex-col gap-6 max-w-md mx-auto lg:mx-0"
+       className="flex flex-col gap-6 w-full items-center max-w-md mx-auto lg:items-start lg:mx-0"
       >
 
         {/* FACEBOOK */}
@@ -582,7 +587,8 @@ function StepCard({
           href="https://www.facebook.com/people/Bedenbender-Mobile-Automotive/61582365656773/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-5 bg-sky-500 hover:bg-sky-400 transition rounded-2xl px-8 py-6 text-white font-semibold"
+       className="w-full max-w-sm mx-auto flex items-center justify-start gap-4 bg-sky-500 hover:bg-sky-400 transition rounded-2xl pl-6 pr-6 py-5 text-white font-semibold"
+
         >
           <span className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
             <Facebook size={26} />
@@ -599,7 +605,9 @@ function StepCard({
           transition={{ duration: 0.6 }}
           href="https://wa.me/15632991817"
           target="_blank"
-          className="flex items-center gap-5 bg-sky-500 hover:bg-sky-400 transition rounded-2xl px-8 py-6 text-white font-semibold"
+        className="w-full max-w-sm mx-auto flex items-center justify-start gap-4 bg-sky-500 hover:bg-sky-400 transition rounded-2xl pl-6 pr-6 py-5 text-white font-semibold"
+
+
         >
           <span className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
             <Phone size={26} />
@@ -614,8 +622,10 @@ function StepCard({
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.6 }}
-          href="https://mail.google.com/mail/?view=cm&to=bedenbendermobileauto@gmail.com"
-          className="flex items-center gap-5 bg-sky-500 hover:bg-sky-400 transition rounded-2xl px-8 py-6 text-white font-semibold"
+         href="https://mail.google.com/mail/?view=cm&to=bedenbendermobileauto@gmail.com"
+      className="w-full max-w-sm mx-auto flex items-center justify-start gap-4 bg-sky-500 hover:bg-sky-400 transition rounded-2xl pl-6 pr-6 py-5 text-white font-semibold"
+
+
         >
           <span className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
             <Mail size={26} />
@@ -697,6 +707,37 @@ function ContactBtn({
     <div className="flex items-center gap-3 bg-sky-500 px-6 py-4 rounded-lg font-semibold">
       {icon}
       {text}
+    </div>
+  );
+}
+function StepCard({
+  step,
+  icon,
+  title,
+  text,
+}: {
+  step: string;
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+}) {
+  return (
+  <div className="relative bg-zinc-800/90 backdrop-blur-xl rounded-2xl p-8 pt-12 shadow-xl border border-white/10">
+      {/* STEP NUMBER */}
+       <div className="absolute -top-5 left-1/2 -translate-x-1/2 md:left-6 md:translate-x-0
+                w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center
+                font-bold text-white ring-4 ring-sky-400/30">
+  {step}
+</div>
+
+      {/* ICON */}
+      <div className="mb-4 text-sky-400">{icon}</div>
+
+      {/* TITLE */}
+      <h3 className="text-xl font-semibold mb-3">{title}</h3>
+
+      {/* TEXT */}
+      <p className="text-zinc-300 text-sm leading-relaxed">{text}</p>
     </div>
   );
 }

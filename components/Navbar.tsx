@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Menu, X } from "lucide-react";
 
 export default function Navbar() {
+    const [open, setOpen] = useState(false);
   return (
     <header className="fixed top-0 left-0 w-full z-50">
       {/* BACKGROUND */}
@@ -56,7 +58,43 @@ export default function Navbar() {
           <MessageCircle size={18} />
           Book our service
         </a>
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden text-white"
+        >
+        {open ? <X size={26} /> : <Menu size={26} />}
+        </button>
       </nav>
+      {/* MOBILE MENU */}
+<div
+  className={`
+    md:hidden
+    absolute top-full left-0 w-full
+    bg-black/95 backdrop-blur-md
+    shadow-lg border-t border-white/10
+    transform transition-all duration-300 ease-out
+    ${open
+      ? "opacity-100 translate-y-0 pointer-events-auto"
+      : "opacity-0 -translate-y-4 pointer-events-none"}
+  `}
+>
+  <div className="px-6 py-6 space-y-4 text-white">
+    <a href="#home" onClick={() => setOpen(false)} className="block">Home</a>
+    <a href="#about" onClick={() => setOpen(false)} className="block">About</a>
+    <a href="#services" onClick={() => setOpen(false)} className="block">Services</a>
+    <a href="#contact" onClick={() => setOpen(false)} className="block">Contact Us</a>
+
+    <a
+      href="https://wa.me/15632991817?text=Hi%20Bedenbender%20Mobile%20Automotive%20LLC,%20I%20want%20to%20book%20the%20service!"
+      onClick={() => setOpen(false)}
+      className="mt-6 flex items-center justify-center gap-2 bg-sky-500 hover:bg-sky-400 transition px-6 py-4 rounded-full font-semibold"
+    >
+      Book our service
+    </a>
+  </div>
+</div>
+
+
     </header>
   );
 }
