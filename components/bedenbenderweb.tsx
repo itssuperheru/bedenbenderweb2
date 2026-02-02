@@ -102,7 +102,7 @@ function StepCard({
 
               <p className="mt-6 text-zinc-300 text-lg max-w-3xl">
                 Professional mobile auto repair delivered directly to your
-                location. No shops, no waiting — just honest and reliable service.
+                location. No shops, no waiting just honest and reliable service.
               </p>
 
               <div className="mt-10 flex gap-4 flex-wrap">
@@ -140,7 +140,6 @@ function StepCard({
   p-10
   rounded-3xl
   border border-sky-500/30
-  shadow-[0_0_40px_rgba(14,165,233,0.15)]
 "
 >
       <h2 className="text-4xl font-bold text-sky-400 mb-6">
@@ -622,7 +621,7 @@ function StepCard({
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ duration: 0.6 }}
-         href="https://mail.google.com/mail/?view=cm&to=bedenbendermobileauto@gmail.com"
+       href="mailto:bedenbendermobileauto@gmail.com?subject=Service%20Booking&body=Hi%20Bedenbender%20Team,%0A%0AI%20want%20to%20book%20a%20service."
       className="w-full max-w-sm mx-auto flex items-center justify-start gap-4 bg-sky-500 hover:bg-sky-400 transition rounded-2xl pl-6 pr-6 py-5 text-white font-semibold"
 
 
